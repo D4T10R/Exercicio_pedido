@@ -4,6 +4,7 @@ import entities.enums.OrderStatus;
 import entities.Client;
 
 import java.util.List;
+import java.util.spi.ToolProvider;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -70,10 +71,11 @@ public class Order {
         sb.append("\nOrder moment: " + moment);
         sb.append("\nOrder status: " + status);
         sb.append("\nClient: " + client);
-        sb.append("\nOrder items: ");
+        sb.append("\nOrder items: \n");
         for (OrderItem item : items) {
             sb.append(item + "\n");
         }
+        sb.append("Total price: R$" + total());
         return sb.toString();
     }
     // METODOS
