@@ -37,11 +37,22 @@ public class OrderItem {
     }
     // ENCAPSULAMENTO
 
-    // METODOS
 
+    // METODOS
     public double subTotal() {
         Double sum = quantity * price;
         return sum;
     }
+
+    public String toString() {
+        return getProduct().getName()
+				+ ", $"
+				+ String.format("%.2f", price)
+				+ ", Quantity: "
+				+ quantity
+				+ ", Subtotal: $"
+				+ String.format("%.2f", subTotal());
+    }
+
 
 }

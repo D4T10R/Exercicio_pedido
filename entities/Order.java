@@ -63,6 +63,19 @@ public class Order {
         }
         return sum;
     }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nORDER SUMMARY");
+        sb.append("\nOrder moment: " + moment);
+        sb.append("\nOrder status: " + status);
+        sb.append("\nClient: " + client);
+        sb.append("\nOrder items: ");
+        for (OrderItem item : items) {
+            sb.append(item + "\n");
+        }
+        return sb.toString();
+    }
     // METODOS
 
 

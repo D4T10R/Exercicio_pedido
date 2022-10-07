@@ -48,7 +48,9 @@ public class Client {
 
     // METODOS
     public String toString() {
-        return 
+        StringBuilder sb = new StringBuilder();
+        sb.append("Cliente: " + name + "(" + birthDate + ")" + " - " + email);
+        return sb.toString();
     }
 
 }
