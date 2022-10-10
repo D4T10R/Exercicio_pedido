@@ -64,7 +64,7 @@ public class Program {
 
 
         // EXIBIÇÃO
-        System.out.println(order);
+        System.out.println("\n" + order);
 
 
 

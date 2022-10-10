@@ -5,15 +5,19 @@ import entities.Client;
 
 import java.util.List;
 import java.util.spi.ToolProvider;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Order {
 
     private Date moment;
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
     private OrderStatus status;
     private Client client;
     private List<OrderItem> items = new ArrayList<>();  
+
+
     // CONSTRUTORES
     public Order() {
     }
@@ -68,14 +72,15 @@ public class Order {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("\nORDER SUMMARY");
-        sb.append("\nOrder moment: " + moment);
+        sb.append("\nOrder moment: " + sdf.format(moment));
         sb.append("\nOrder status: " + status);
-        sb.append("\nClient: " + client);
+        sb.append("\n" + client + "\n");
         sb.append("\nOrder items: \n");
+        sb.append("\n");
         for (OrderItem item : items) {
             sb.append(item + "\n");
         }
-        sb.append("Total price: R$" + total());
+        sb.append("\n Total price: R$" + total());
         return sb.toString();
     }
     // METODOS
